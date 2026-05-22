@@ -109,7 +109,7 @@ header {
 
 #toast-wrap {
   position: fixed;
-  top: 12vh;
+  top: 6vh;
   left: 0; right: 0;
   display: flex;
   justify-content: center;
@@ -120,13 +120,13 @@ header {
 #toast {
   background: var(--text);
   color: var(--bg);
-  padding: 1.4em 2.2em;
+  padding: 0.4em 2.2em;
   border-radius: 0.25em;
-  font-size: 1.2em;
+  font-size: 2em;
   font-weight: 600;
   opacity: 0;
   transform: translateY(-8px);
-  transition: opacity .15s ease, transform .15s ease;
+  transition: opacity .4s ease, transform .4s ease;
 }
 
 #toast.show {
@@ -324,6 +324,23 @@ main {
   overflow-y: auto;
   animation: slide-up .25s ease;
   cursor: default;
+  position: relative;
+}
+
+#game-result {
+  position: absolute;
+  top: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.4em 2.2em;
+  border-radius: 2em;
+  font-size: 2em;
+  font-weight: 600;
+  white-space: nowrap;
+  display: none;
 }
 
 @keyframes slide-up {

@@ -412,10 +412,21 @@ function showToast(msg, dur = 1800, type = '') {
 
 // ── Modal ─────────────────────────────────────────────────────────────────────
 
+function setGameResult(text) {
+  const el = document.getElementById('game-result');
+  el.textContent = text;
+  el.style.display = text ? 'block' : 'none';
+}
+
 function openModal(currentTries = null) {
   document.querySelector('.modal').classList.remove('modal--stats-only');
   document.getElementById('modal-word').textContent     = target;
   document.getElementById('modal-sentence').textContent = sentence;
+  if (currentTries === -1) {
+    setGameResult(`palavra certa: ${target.toLowerCase()}`);
+  } else {
+    setGameResult(WIN_MSGS[currentTries - 1] ?? 'Correto!');
+  }
   renderStats(computeStats(), currentTries);
   document.getElementById('overlay').classList.remove('hidden');
 }
@@ -423,6 +434,15 @@ function openModal(currentTries = null) {
 function openStatsModal() {
   document.querySelector('.modal').classList.add('modal--stats-only');
   const saved = getTodayResult(todayStr);
+  if (saved) {
+    if (saved.tries === -1) {
+      setGameResult(`palavra certa: ${target.toLowerCase()}`);
+    } else {
+      setGameResult(WIN_MSGS[saved.tries - 1] ?? 'Correto!');
+    }
+  } else {
+    setGameResult('');
+  }
   renderStats(computeStats(), saved ? saved.tries : null);
   document.getElementById('overlay').classList.remove('hidden');
 }
