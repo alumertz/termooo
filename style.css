@@ -408,22 +408,6 @@ main {
   position: relative;
 }
 
-#game-result {
-  position: absolute;
-  top: 6vh;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-  background: var(--text);
-  color: var(--bg);
-  padding: 0.4em 2.2em;
-  border-radius: 2em;
-  font-size: 2em;
-  font-weight: 600;
-  white-space: nowrap;
-  display: none;
-}
-
 @keyframes slide-up {
   from { transform: translateY(16px); opacity: 0; }
   to   { transform: translateY(0);    opacity: 1; }
