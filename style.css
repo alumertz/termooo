@@ -259,8 +259,8 @@ main {
 .key-row--9  { grid-template-columns: repeat(9,  1fr); }
 .key-row--8  { grid-template-columns: repeat(8,  1fr); }
 
-#keyboard .key-row:nth-child(2) { padding-left: 2.5em; }
-#keyboard .key-row:nth-child(3) { padding-left: 5em; }
+#keyboard .key-row:nth-child(2) { padding-left: 2.5em; padding-right: 2.5em; }
+#keyboard .key-row:nth-child(3) { padding-left: 5em; padding-right: 5em; }
 
 .key {
   border: none;

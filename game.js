@@ -56,7 +56,8 @@ async function init() {
     return;
   }
 
-  const entry = words[dayIndex() % words.length];
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const entry = words.find(w => w.date === todayStr) ?? words[dayIndex() % words.length];
   target   = String(entry.word     ?? '').toUpperCase().trim();
   sentence = String(entry.sentence ?? '');
 
@@ -198,7 +199,7 @@ function submit() {
 
 function evaluate(guess) {
   const result = Array(WORD_LEN).fill('absent');
-  const tArr   = target.split('');
+  const tArr   = normalize(target).split('');
   const gArr   = guess.split('');
 
   for (let i = 0; i < WORD_LEN; i++) {

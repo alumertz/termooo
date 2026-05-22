@@ -1,22 +1,1852 @@
 [
-  { "word": "CRISE", "sentence": "Momento de dificuldade ou instabilidade que exige uma decisão urgente." },
-  { "word": "PORTA", "sentence": "Estrutura móvel que fecha a entrada de um ambiente ou compartimento." },
-  { "word": "MUNDO", "sentence": "O planeta Terra, ou o conjunto de tudo o que existe." },
-  { "word": "CAMPO", "sentence": "Área aberta, geralmente usada para agricultura, esportes ou criação de animais." },
-  { "word": "PRAIA", "sentence": "Faixa de areia ou cascalho que margeia o mar, um rio ou um lago." },
-  { "word": "SONHO", "sentence": "Sequência de imagens e sensações que ocorre durante o sono." },
-  { "word": "LIVRO", "sentence": "Conjunto de páginas encadernadas que transmitem texto, imagens ou ambos." },
-  { "word": "TEMPO", "sentence": "Grandeza que mede a duração dos eventos; também o estado da atmosfera." },
-  { "word": "PEDRA", "sentence": "Fragmento sólido de rocha, natural ou lapidado." },
-  { "word": "CARTA", "sentence": "Mensagem escrita enviada de uma pessoa a outra, geralmente em papel." },
-  { "word": "TIGRE", "sentence": "Grande felino listrado nativo da Ásia, conhecido por sua força e agilidade." },
-  { "word": "BARCO", "sentence": "Embarcação pequena usada para navegar em rios, lagos ou mares." },
-  { "word": "CANTO", "sentence": "Emissão de sons musicais com a voz; também o ângulo de duas paredes." },
-  { "word": "FOLHA", "sentence": "Órgão vegetal plano e fino responsável pela fotossíntese." },
-  { "word": "NOBRE", "sentence": "Pessoa pertencente à aristocracia; algo de grande valor moral." },
-  { "word": "GRITO", "sentence": "Emissão de voz intensa e aguda, geralmente de surpresa, dor ou alegria." },
-  { "word": "VENTO", "sentence": "Movimento de ar em relação à superfície terrestre." },
-  { "word": "TROCO", "sentence": "Dinheiro devolvido quando se paga a mais pelo valor de um produto." },
-  { "word": "BURRO", "sentence": "Animal doméstico de trabalho, cruzamento de asno com égua." },
-  { "word": "FALAR", "sentence": "Ato de expressar ideias ou sentimentos por meio de palavras." }
+  {
+    "word": "AGORA",
+    "sentence": "",
+    "date": "2026-05-25"
+  },
+  {
+    "word": "TARDE",
+    "sentence": "",
+    "date": "2026-05-26"
+  },
+  {
+    "word": "RABÃO",
+    "sentence": "",
+    "date": "2026-05-27"
+  },
+  {
+    "word": "RISCO",
+    "sentence": "",
+    "date": "2026-05-28"
+  },
+  {
+    "word": "FESTA",
+    "sentence": "",
+    "date": "2026-05-29"
+  },
+  {
+    "word": "AJUDA",
+    "sentence": "",
+    "date": "2026-05-30"
+  },
+  {
+    "word": "LÁBIA",
+    "sentence": "",
+    "date": "2026-05-31"
+  },
+  {
+    "word": "GASTO",
+    "sentence": "",
+    "date": "2026-06-01"
+  },
+  {
+    "word": "FÊNIX",
+    "sentence": "",
+    "date": "2026-06-02"
+  },
+  {
+    "word": "RONCA",
+    "sentence": "",
+    "date": "2026-06-03"
+  },
+  {
+    "word": "JURAR",
+    "sentence": "",
+    "date": "2026-06-04"
+  },
+  {
+    "word": "ENJOO",
+    "sentence": "",
+    "date": "2026-06-05"
+  },
+  {
+    "word": "COMBA",
+    "sentence": "",
+    "date": "2026-06-06"
+  },
+  {
+    "word": "FONTE",
+    "sentence": "",
+    "date": "2026-06-07"
+  },
+  {
+    "word": "APOIO",
+    "sentence": "",
+    "date": "2026-06-08"
+  },
+  {
+    "word": "OUTRO",
+    "sentence": "",
+    "date": "2026-06-09"
+  },
+  {
+    "word": "PODER",
+    "sentence": "",
+    "date": "2026-06-10"
+  },
+  {
+    "word": "DORME",
+    "sentence": "",
+    "date": "2026-06-11"
+  },
+  {
+    "word": "TOPOU",
+    "sentence": "",
+    "date": "2026-06-12"
+  },
+  {
+    "word": "TERMO",
+    "sentence": "",
+    "date": "2026-06-13"
+  },
+  {
+    "word": "CHOVE",
+    "sentence": "",
+    "date": "2026-06-14"
+  },
+  {
+    "word": "CERCA",
+    "sentence": "",
+    "date": "2026-06-15"
+  },
+  {
+    "word": "CAPAZ",
+    "sentence": "",
+    "date": "2026-06-16"
+  },
+  {
+    "word": "LOUÇA",
+    "sentence": "",
+    "date": "2026-06-17"
+  },
+  {
+    "word": "PAPOS",
+    "sentence": "",
+    "date": "2026-06-18"
+  },
+  {
+    "word": "POETA",
+    "sentence": "",
+    "date": "2026-06-19"
+  },
+  {
+    "word": "FUGAZ",
+    "sentence": "",
+    "date": "2026-06-20"
+  },
+  {
+    "word": "FLUIR",
+    "sentence": "",
+    "date": "2026-06-21"
+  },
+  {
+    "word": "LEITE",
+    "sentence": "",
+    "date": "2026-06-22"
+  },
+  {
+    "word": "BOLOR",
+    "sentence": "",
+    "date": "2026-06-23"
+  },
+  {
+    "word": "MÁGOA",
+    "sentence": "",
+    "date": "2026-06-24"
+  },
+  {
+    "word": "ÂNIMO",
+    "sentence": "",
+    "date": "2026-06-25"
+  },
+  {
+    "word": "ABRIU",
+    "sentence": "",
+    "date": "2026-06-26"
+  },
+  {
+    "word": "RAZÃO",
+    "sentence": "",
+    "date": "2026-06-27"
+  },
+  {
+    "word": "CLIMA",
+    "sentence": "",
+    "date": "2026-06-28"
+  },
+  {
+    "word": "DORES",
+    "sentence": "",
+    "date": "2026-06-29"
+  },
+  {
+    "word": "PESOS",
+    "sentence": "",
+    "date": "2026-06-30"
+  },
+  {
+    "word": "BOLOS",
+    "sentence": "",
+    "date": "2026-07-01"
+  },
+  {
+    "word": "EXTRA",
+    "sentence": "",
+    "date": "2026-07-02"
+  },
+  {
+    "word": "RUIVA",
+    "sentence": "",
+    "date": "2026-07-03"
+  },
+  {
+    "word": "ADIOU",
+    "sentence": "",
+    "date": "2026-07-04"
+  },
+  {
+    "word": "PERNA",
+    "sentence": "",
+    "date": "2026-07-05"
+  },
+  {
+    "word": "ZÍPER",
+    "sentence": "",
+    "date": "2026-07-06"
+  },
+  {
+    "word": "DOBRA",
+    "sentence": "",
+    "date": "2026-07-07"
+  },
+  {
+    "word": "GANHO",
+    "sentence": "",
+    "date": "2026-07-08"
+  },
+  {
+    "word": "ETAPA",
+    "sentence": "",
+    "date": "2026-07-09"
+  },
+  {
+    "word": "LINDO",
+    "sentence": "",
+    "date": "2026-07-10"
+  },
+  {
+    "word": "GELOU",
+    "sentence": "",
+    "date": "2026-07-11"
+  },
+  {
+    "word": "PEDRA",
+    "sentence": "",
+    "date": "2026-07-12"
+  },
+  {
+    "word": "CUECA",
+    "sentence": "",
+    "date": "2026-07-13"
+  },
+  {
+    "word": "FRACO",
+    "sentence": "",
+    "date": "2026-07-14"
+  },
+  {
+    "word": "LIXOU",
+    "sentence": "",
+    "date": "2026-07-15"
+  },
+  {
+    "word": "APARA",
+    "sentence": "",
+    "date": "2026-07-16"
+  },
+  {
+    "word": "LEGAL",
+    "sentence": "",
+    "date": "2026-07-17"
+  },
+  {
+    "word": "HOMUS",
+    "sentence": "",
+    "date": "2026-07-18"
+  },
+  {
+    "word": "JUICE",
+    "sentence": "",
+    "date": "2026-07-19"
+  },
+  {
+    "word": "CESTO",
+    "sentence": "",
+    "date": "2026-07-20"
+  },
+  {
+    "word": "BABOU",
+    "sentence": "",
+    "date": "2026-07-21"
+  },
+  {
+    "word": "ZEROS",
+    "sentence": "",
+    "date": "2026-07-22"
+  },
+  {
+    "word": "NIPLE",
+    "sentence": "",
+    "date": "2026-07-23"
+  },
+  {
+    "word": "FOCAR",
+    "sentence": "",
+    "date": "2026-07-24"
+  },
+  {
+    "word": "CANSA",
+    "sentence": "",
+    "date": "2026-07-25"
+  },
+  {
+    "word": "FERVE",
+    "sentence": "",
+    "date": "2026-07-26"
+  },
+  {
+    "word": "ÓBVIO",
+    "sentence": "",
+    "date": "2026-07-27"
+  },
+  {
+    "word": "IOIÔS",
+    "sentence": "",
+    "date": "2026-07-28"
+  },
+  {
+    "word": "GRÃOS",
+    "sentence": "",
+    "date": "2026-07-29"
+  },
+  {
+    "word": "CARNE",
+    "sentence": "",
+    "date": "2026-07-30"
+  },
+  {
+    "word": "PONTO",
+    "sentence": "",
+    "date": "2026-07-31"
+  },
+  {
+    "word": "CHULÉ",
+    "sentence": "",
+    "date": "2026-08-01"
+  },
+  {
+    "word": "MANTO",
+    "sentence": "",
+    "date": "2026-08-02"
+  },
+  {
+    "word": "JOGOS",
+    "sentence": "",
+    "date": "2026-08-03"
+  },
+  {
+    "word": "LIÇÃO",
+    "sentence": "",
+    "date": "2026-08-04"
+  },
+  {
+    "word": "ÍDOLO",
+    "sentence": "",
+    "date": "2026-08-05"
+  },
+  {
+    "word": "TENHO",
+    "sentence": "",
+    "date": "2026-08-06"
+  },
+  {
+    "word": "PERTO",
+    "sentence": "",
+    "date": "2026-08-07"
+  },
+  {
+    "word": "CACHE",
+    "sentence": "",
+    "date": "2026-08-08"
+  },
+  {
+    "word": "CHUTA",
+    "sentence": "",
+    "date": "2026-08-09"
+  },
+  {
+    "word": "AUTOR",
+    "sentence": "",
+    "date": "2026-08-10"
+  },
+  {
+    "word": "TAMPA",
+    "sentence": "",
+    "date": "2026-08-11"
+  },
+  {
+    "word": "RANGO",
+    "sentence": "",
+    "date": "2026-08-12"
+  },
+  {
+    "word": "CORRE",
+    "sentence": "",
+    "date": "2026-08-13"
+  },
+  {
+    "word": "COMER",
+    "sentence": "",
+    "date": "2026-08-14"
+  },
+  {
+    "word": "CALOR",
+    "sentence": "",
+    "date": "2026-08-15"
+  },
+  {
+    "word": "ACABA",
+    "sentence": "",
+    "date": "2026-08-16"
+  },
+  {
+    "word": "TALCO",
+    "sentence": "",
+    "date": "2026-08-17"
+  },
+  {
+    "word": "JEITO",
+    "sentence": "",
+    "date": "2026-08-18"
+  },
+  {
+    "word": "FALAR",
+    "sentence": "",
+    "date": "2026-08-19"
+  },
+  {
+    "word": "CAMPO",
+    "sentence": "",
+    "date": "2026-08-20"
+  },
+  {
+    "word": "COADO",
+    "sentence": "",
+    "date": "2026-08-21"
+  },
+  {
+    "word": "OUSAR",
+    "sentence": "",
+    "date": "2026-08-22"
+  },
+  {
+    "word": "BARBA",
+    "sentence": "",
+    "date": "2026-08-23"
+  },
+  {
+    "word": "CALÇA",
+    "sentence": "",
+    "date": "2026-08-24"
+  },
+  {
+    "word": "BATEU",
+    "sentence": "",
+    "date": "2026-08-25"
+  },
+  {
+    "word": "PEIXE",
+    "sentence": "",
+    "date": "2026-08-26"
+  },
+  {
+    "word": "LENHA",
+    "sentence": "",
+    "date": "2026-08-27"
+  },
+  {
+    "word": "AGITO",
+    "sentence": "",
+    "date": "2026-08-28"
+  },
+  {
+    "word": "GERAR",
+    "sentence": "",
+    "date": "2026-08-29"
+  },
+  {
+    "word": "FOLHA",
+    "sentence": "",
+    "date": "2026-08-30"
+  },
+  {
+    "word": "INATO",
+    "sentence": "",
+    "date": "2026-08-31"
+  },
+  {
+    "word": "CINZA",
+    "sentence": "",
+    "date": "2026-09-01"
+  },
+  {
+    "word": "CAFÉS",
+    "sentence": "",
+    "date": "2026-09-02"
+  },
+  {
+    "word": "AVEIA",
+    "sentence": "",
+    "date": "2026-09-03"
+  },
+  {
+    "word": "VÁCUO",
+    "sentence": "",
+    "date": "2026-09-04"
+  },
+  {
+    "word": "BLOCO",
+    "sentence": "",
+    "date": "2026-09-05"
+  },
+  {
+    "word": "ODEIA",
+    "sentence": "",
+    "date": "2026-09-06"
+  },
+  {
+    "word": "VÍRUS",
+    "sentence": "",
+    "date": "2026-09-07"
+  },
+  {
+    "word": "FOFOS",
+    "sentence": "",
+    "date": "2026-09-08"
+  },
+  {
+    "word": "DEDÃO",
+    "sentence": "",
+    "date": "2026-09-09"
+  },
+  {
+    "word": "ÁTOMO",
+    "sentence": "",
+    "date": "2026-09-10"
+  },
+  {
+    "word": "MÚTUO",
+    "sentence": "",
+    "date": "2026-09-11"
+  },
+  {
+    "word": "DEDUZ",
+    "sentence": "",
+    "date": "2026-09-12"
+  },
+  {
+    "word": "GENIO",
+    "sentence": "",
+    "date": "2026-09-13"
+  },
+  {
+    "word": "MAÇÃS",
+    "sentence": "",
+    "date": "2026-09-14"
+  },
+  {
+    "word": "FALTA",
+    "sentence": "",
+    "date": "2026-09-15"
+  },
+  {
+    "word": "MIÚDO",
+    "sentence": "",
+    "date": "2026-09-16"
+  },
+  {
+    "word": "ACENA",
+    "sentence": "",
+    "date": "2026-09-17"
+  },
+  {
+    "word": "FORÇA",
+    "sentence": "",
+    "date": "2026-09-18"
+  },
+  {
+    "word": "VENTO",
+    "sentence": "",
+    "date": "2026-09-19"
+  },
+  {
+    "word": "HAVIA",
+    "sentence": "",
+    "date": "2026-09-20"
+  },
+  {
+    "word": "ERVAS",
+    "sentence": "",
+    "date": "2026-09-21"
+  },
+  {
+    "word": "ÁRDUO",
+    "sentence": "",
+    "date": "2026-09-22"
+  },
+  {
+    "word": "JUNTO",
+    "sentence": "",
+    "date": "2026-09-23"
+  },
+  {
+    "word": "BALÃO",
+    "sentence": "",
+    "date": "2026-09-24"
+  },
+  {
+    "word": "LÍDER",
+    "sentence": "",
+    "date": "2026-09-25"
+  },
+  {
+    "word": "BAMBO",
+    "sentence": "",
+    "date": "2026-09-26"
+  },
+  {
+    "word": "HONRA",
+    "sentence": "",
+    "date": "2026-09-27"
+  },
+  {
+    "word": "MANHÃ",
+    "sentence": "",
+    "date": "2026-09-28"
+  },
+  {
+    "word": "BIFÃO",
+    "sentence": "",
+    "date": "2026-09-29"
+  },
+  {
+    "word": "VAGAS",
+    "sentence": "",
+    "date": "2026-09-30"
+  },
+  {
+    "word": "ASTRO",
+    "sentence": "",
+    "date": "2026-10-01"
+  },
+  {
+    "word": "BANCO",
+    "sentence": "",
+    "date": "2026-10-02"
+  },
+  {
+    "word": "IRADO",
+    "sentence": "",
+    "date": "2026-10-03"
+  },
+  {
+    "word": "TOUCA",
+    "sentence": "",
+    "date": "2026-10-04"
+  },
+  {
+    "word": "EXIBE",
+    "sentence": "",
+    "date": "2026-10-05"
+  },
+  {
+    "word": "BUCHO",
+    "sentence": "",
+    "date": "2026-10-06"
+  },
+  {
+    "word": "PILHA",
+    "sentence": "",
+    "date": "2026-10-07"
+  },
+  {
+    "word": "VERÃO",
+    "sentence": "",
+    "date": "2026-10-08"
+  },
+  {
+    "word": "LIVRO",
+    "sentence": "",
+    "date": "2026-10-09"
+  },
+  {
+    "word": "BEIJO",
+    "sentence": "",
+    "date": "2026-10-10"
+  },
+  {
+    "word": "GRAÇA",
+    "sentence": "",
+    "date": "2026-10-11"
+  },
+  {
+    "word": "APARO",
+    "sentence": "",
+    "date": "2026-10-12"
+  },
+  {
+    "word": "OLHOS",
+    "sentence": "",
+    "date": "2026-10-13"
+  },
+  {
+    "word": "FOTOS",
+    "sentence": "",
+    "date": "2026-10-14"
+  },
+  {
+    "word": "RASGA",
+    "sentence": "",
+    "date": "2026-10-15"
+  },
+  {
+    "word": "RECÉM",
+    "sentence": "",
+    "date": "2026-10-16"
+  },
+  {
+    "word": "PAVOR",
+    "sentence": "",
+    "date": "2026-10-17"
+  },
+  {
+    "word": "CANON",
+    "sentence": "",
+    "date": "2026-10-18"
+  },
+  {
+    "word": "DENTE",
+    "sentence": "",
+    "date": "2026-10-19"
+  },
+  {
+    "word": "RELUZ",
+    "sentence": "",
+    "date": "2026-10-20"
+  },
+  {
+    "word": "GRUPO",
+    "sentence": "",
+    "date": "2026-10-21"
+  },
+  {
+    "word": "REMÓI",
+    "sentence": "",
+    "date": "2026-10-22"
+  },
+  {
+    "word": "BEBER",
+    "sentence": "",
+    "date": "2026-10-23"
+  },
+  {
+    "word": "FAZER",
+    "sentence": "",
+    "date": "2026-10-24"
+  },
+  {
+    "word": "ENOJA",
+    "sentence": "",
+    "date": "2026-10-25"
+  },
+  {
+    "word": "MILHO",
+    "sentence": "",
+    "date": "2026-10-26"
+  },
+  {
+    "word": "ANDAR",
+    "sentence": "",
+    "date": "2026-10-27"
+  },
+  {
+    "word": "GOZAI",
+    "sentence": "",
+    "date": "2026-10-28"
+  },
+  {
+    "word": "LAPSO",
+    "sentence": "",
+    "date": "2026-10-29"
+  },
+  {
+    "word": "CURSA",
+    "sentence": "",
+    "date": "2026-10-30"
+  },
+  {
+    "word": "CALVO",
+    "sentence": "",
+    "date": "2026-10-31"
+  },
+  {
+    "word": "RAPAZ",
+    "sentence": "",
+    "date": "2026-11-01"
+  },
+  {
+    "word": "FILHO",
+    "sentence": "",
+    "date": "2026-11-02"
+  },
+  {
+    "word": "ZIPAR",
+    "sentence": "",
+    "date": "2026-11-03"
+  },
+  {
+    "word": "AMIGO",
+    "sentence": "",
+    "date": "2026-11-04"
+  },
+  {
+    "word": "CAQUI",
+    "sentence": "",
+    "date": "2026-11-05"
+  },
+  {
+    "word": "CANJA",
+    "sentence": "",
+    "date": "2026-11-06"
+  },
+  {
+    "word": "AUDAZ",
+    "sentence": "",
+    "date": "2026-11-07"
+  },
+  {
+    "word": "ABRIL",
+    "sentence": "",
+    "date": "2026-11-08"
+  },
+  {
+    "word": "HÁBIL",
+    "sentence": "",
+    "date": "2026-11-09"
+  },
+  {
+    "word": "ADOTA",
+    "sentence": "",
+    "date": "2026-11-10"
+  },
+  {
+    "word": "LESÃO",
+    "sentence": "",
+    "date": "2026-11-11"
+  },
+  {
+    "word": "CHEGA",
+    "sentence": "",
+    "date": "2026-11-12"
+  },
+  {
+    "word": "REUSE",
+    "sentence": "",
+    "date": "2026-11-13"
+  },
+  {
+    "word": "QUERO",
+    "sentence": "",
+    "date": "2026-11-14"
+  },
+  {
+    "word": "ÁUDIO",
+    "sentence": "",
+    "date": "2026-11-15"
+  },
+  {
+    "word": "CÍLIO",
+    "sentence": "",
+    "date": "2026-11-16"
+  },
+  {
+    "word": "LIVRE",
+    "sentence": "",
+    "date": "2026-11-17"
+  },
+  {
+    "word": "MACIO",
+    "sentence": "",
+    "date": "2026-11-18"
+  },
+  {
+    "word": "CUSTO",
+    "sentence": "",
+    "date": "2026-11-19"
+  },
+  {
+    "word": "IMPÔS",
+    "sentence": "",
+    "date": "2026-11-20"
+  },
+  {
+    "word": "ÍMPAR",
+    "sentence": "",
+    "date": "2026-11-21"
+  },
+  {
+    "word": "AVISO",
+    "sentence": "",
+    "date": "2026-11-22"
+  },
+  {
+    "word": "LENTO",
+    "sentence": "",
+    "date": "2026-11-23"
+  },
+  {
+    "word": "DENGO",
+    "sentence": "",
+    "date": "2026-11-24"
+  },
+  {
+    "word": "VAZAR",
+    "sentence": "",
+    "date": "2026-11-25"
+  },
+  {
+    "word": "CRIAR",
+    "sentence": "",
+    "date": "2026-11-26"
+  },
+  {
+    "word": "FELIZ",
+    "sentence": "",
+    "date": "2026-11-27"
+  },
+  {
+    "word": "HOMEM",
+    "sentence": "",
+    "date": "2026-11-28"
+  },
+  {
+    "word": "FILÉS",
+    "sentence": "",
+    "date": "2026-11-29"
+  },
+  {
+    "word": "ARFAR",
+    "sentence": "",
+    "date": "2026-11-30"
+  },
+  {
+    "word": "SACHÊ",
+    "sentence": "",
+    "date": "2026-12-01"
+  },
+  {
+    "word": "EXAME",
+    "sentence": "",
+    "date": "2026-12-02"
+  },
+  {
+    "word": "BARCO",
+    "sentence": "",
+    "date": "2026-12-03"
+  },
+  {
+    "word": "LIMPA",
+    "sentence": "",
+    "date": "2026-12-04"
+  },
+  {
+    "word": "AROMA",
+    "sentence": "",
+    "date": "2026-12-05"
+  },
+  {
+    "word": "OPTOU",
+    "sentence": "",
+    "date": "2026-12-06"
+  },
+  {
+    "word": "NUTRE",
+    "sentence": "",
+    "date": "2026-12-07"
+  },
+  {
+    "word": "ERROS",
+    "sentence": "",
+    "date": "2026-12-08"
+  },
+  {
+    "word": "ISOLA",
+    "sentence": "",
+    "date": "2026-12-09"
+  },
+  {
+    "word": "RUGAS",
+    "sentence": "",
+    "date": "2026-12-10"
+  },
+  {
+    "word": "SABER",
+    "sentence": "",
+    "date": "2026-12-11"
+  },
+  {
+    "word": "GOSTO",
+    "sentence": "",
+    "date": "2026-12-12"
+  },
+  {
+    "word": "CRUSH",
+    "sentence": "",
+    "date": "2026-12-13"
+  },
+  {
+    "word": "VARÃO",
+    "sentence": "",
+    "date": "2026-12-14"
+  },
+  {
+    "word": "TIPOS",
+    "sentence": "",
+    "date": "2026-12-15"
+  },
+  {
+    "word": "CASAL",
+    "sentence": "",
+    "date": "2026-12-16"
+  },
+  {
+    "word": "ZOAVA",
+    "sentence": "",
+    "date": "2026-12-17"
+  },
+  {
+    "word": "IGAPÓ",
+    "sentence": "",
+    "date": "2026-12-18"
+  },
+  {
+    "word": "GOTAS",
+    "sentence": "",
+    "date": "2026-12-19"
+  },
+  {
+    "word": "MUITO",
+    "sentence": "",
+    "date": "2026-12-20"
+  },
+  {
+    "word": "PINTA",
+    "sentence": "",
+    "date": "2026-12-21"
+  },
+  {
+    "word": "TALHO",
+    "sentence": "",
+    "date": "2026-12-22"
+  },
+  {
+    "word": "ARROZ",
+    "sentence": "",
+    "date": "2026-12-23"
+  },
+  {
+    "word": "ROUPA",
+    "sentence": "",
+    "date": "2026-12-24"
+  },
+  {
+    "word": "AMAVA",
+    "sentence": "",
+    "date": "2026-12-25"
+  },
+  {
+    "word": "BOLSO",
+    "sentence": "",
+    "date": "2026-12-26"
+  },
+  {
+    "word": "VALOR",
+    "sentence": "",
+    "date": "2026-12-27"
+  },
+  {
+    "word": "ROSTO",
+    "sentence": "",
+    "date": "2026-12-28"
+  },
+  {
+    "word": "GABAR",
+    "sentence": "",
+    "date": "2026-12-29"
+  },
+  {
+    "word": "ABUSA",
+    "sentence": "",
+    "date": "2026-12-30"
+  },
+  {
+    "word": "LOUSA",
+    "sentence": "",
+    "date": "2026-12-31"
+  },
+  {
+    "word": "FORMA",
+    "sentence": "",
+    "date": "2027-01-01"
+  },
+  {
+    "word": "OTITE",
+    "sentence": "",
+    "date": "2027-01-02"
+  },
+  {
+    "word": "LEVOU",
+    "sentence": "",
+    "date": "2027-01-03"
+  },
+  {
+    "word": "ADORA",
+    "sentence": "",
+    "date": "2027-01-04"
+  },
+  {
+    "word": "ACHAR",
+    "sentence": "",
+    "date": "2027-01-05"
+  },
+  {
+    "word": "ÁLBUM",
+    "sentence": "",
+    "date": "2027-01-06"
+  },
+  {
+    "word": "MENOS",
+    "sentence": "",
+    "date": "2027-01-07"
+  },
+  {
+    "word": "ATURA",
+    "sentence": "",
+    "date": "2027-01-08"
+  },
+  {
+    "word": "DEITA",
+    "sentence": "",
+    "date": "2027-01-09"
+  },
+  {
+    "word": "VÍDEO",
+    "sentence": "",
+    "date": "2027-01-10"
+  },
+  {
+    "word": "INPUT",
+    "sentence": "",
+    "date": "2027-01-11"
+  },
+  {
+    "word": "BUFOU",
+    "sentence": "",
+    "date": "2027-01-12"
+  },
+  {
+    "word": "ACIMA",
+    "sentence": "",
+    "date": "2027-01-13"
+  },
+  {
+    "word": "CHAMA",
+    "sentence": "",
+    "date": "2027-01-14"
+  },
+  {
+    "word": "EXALA",
+    "sentence": "",
+    "date": "2027-01-15"
+  },
+  {
+    "word": "LUZES",
+    "sentence": "",
+    "date": "2027-01-16"
+  },
+  {
+    "word": "CALMO",
+    "sentence": "",
+    "date": "2027-01-17"
+  },
+  {
+    "word": "GALÃO",
+    "sentence": "",
+    "date": "2027-01-18"
+  },
+  {
+    "word": "PEDAL",
+    "sentence": "",
+    "date": "2027-01-19"
+  },
+  {
+    "word": "PALMA",
+    "sentence": "",
+    "date": "2027-01-20"
+  },
+  {
+    "word": "VENCE",
+    "sentence": "",
+    "date": "2027-01-21"
+  },
+  {
+    "word": "RIMAR",
+    "sentence": "",
+    "date": "2027-01-22"
+  },
+  {
+    "word": "ROBÔS",
+    "sentence": "",
+    "date": "2027-01-23"
+  },
+  {
+    "word": "DOÍDO",
+    "sentence": "",
+    "date": "2027-01-24"
+  },
+  {
+    "word": "VIRAR",
+    "sentence": "",
+    "date": "2027-01-25"
+  },
+  {
+    "word": "RICOS",
+    "sentence": "",
+    "date": "2027-01-26"
+  },
+  {
+    "word": "DIRIA",
+    "sentence": "",
+    "date": "2027-01-27"
+  },
+  {
+    "word": "POUPA",
+    "sentence": "",
+    "date": "2027-01-28"
+  },
+  {
+    "word": "FIRMA",
+    "sentence": "",
+    "date": "2027-01-29"
+  },
+  {
+    "word": "PENOU",
+    "sentence": "",
+    "date": "2027-01-30"
+  },
+  {
+    "word": "JARRA",
+    "sentence": "",
+    "date": "2027-01-31"
+  },
+  {
+    "word": "IDEAL",
+    "sentence": "",
+    "date": "2027-02-01"
+  },
+  {
+    "word": "HERÓI",
+    "sentence": "",
+    "date": "2027-02-02"
+  },
+  {
+    "word": "DANÇA",
+    "sentence": "",
+    "date": "2027-02-03"
+  },
+  {
+    "word": "VELAS",
+    "sentence": "",
+    "date": "2027-02-04"
+  },
+  {
+    "word": "ORDEM",
+    "sentence": "",
+    "date": "2027-02-05"
+  },
+  {
+    "word": "GRIPE",
+    "sentence": "",
+    "date": "2027-02-06"
+  },
+  {
+    "word": "FATOS",
+    "sentence": "",
+    "date": "2027-02-07"
+  },
+  {
+    "word": "AZUIS",
+    "sentence": "",
+    "date": "2027-02-08"
+  },
+  {
+    "word": "LANCE",
+    "sentence": "",
+    "date": "2027-02-09"
+  },
+  {
+    "word": "NOITE",
+    "sentence": "",
+    "date": "2027-02-10"
+  },
+  {
+    "word": "OUVIR",
+    "sentence": "",
+    "date": "2027-02-11"
+  },
+  {
+    "word": "MULTA",
+    "sentence": "",
+    "date": "2027-02-12"
+  },
+  {
+    "word": "MESMO",
+    "sentence": "",
+    "date": "2027-02-13"
+  },
+  {
+    "word": "FILME",
+    "sentence": "",
+    "date": "2027-02-14"
+  },
+  {
+    "word": "COBRA",
+    "sentence": "",
+    "date": "2027-02-15"
+  },
+  {
+    "word": "IDEIA",
+    "sentence": "",
+    "date": "2027-02-16"
+  },
+  {
+    "word": "MOEDA",
+    "sentence": "",
+    "date": "2027-02-17"
+  },
+  {
+    "word": "ROUBO",
+    "sentence": "",
+    "date": "2027-02-18"
+  },
+  {
+    "word": "RURAL",
+    "sentence": "",
+    "date": "2027-02-19"
+  },
+  {
+    "word": "CUIDE",
+    "sentence": "",
+    "date": "2027-02-20"
+  },
+  {
+    "word": "ÁVIDO",
+    "sentence": "",
+    "date": "2027-02-21"
+  },
+  {
+    "word": "ALUNO",
+    "sentence": "",
+    "date": "2027-02-22"
+  },
+  {
+    "word": "FONES",
+    "sentence": "",
+    "date": "2027-02-23"
+  },
+  {
+    "word": "FEIRA",
+    "sentence": "",
+    "date": "2027-02-24"
+  },
+  {
+    "word": "DATAS",
+    "sentence": "",
+    "date": "2027-02-25"
+  },
+  {
+    "word": "LACRA",
+    "sentence": "",
+    "date": "2027-02-26"
+  },
+  {
+    "word": "REGRA",
+    "sentence": "",
+    "date": "2027-02-27"
+  },
+  {
+    "word": "REMAR",
+    "sentence": "",
+    "date": "2027-02-28"
+  },
+  {
+    "word": "NÉVOA",
+    "sentence": "",
+    "date": "2027-03-01"
+  },
+  {
+    "word": "VEZES",
+    "sentence": "",
+    "date": "2027-03-02"
+  },
+  {
+    "word": "GAROA",
+    "sentence": "",
+    "date": "2027-03-03"
+  },
+  {
+    "word": "JUSTO",
+    "sentence": "",
+    "date": "2027-03-04"
+  },
+  {
+    "word": "TENSO",
+    "sentence": "",
+    "date": "2027-03-05"
+  },
+  {
+    "word": "PÓLEM",
+    "sentence": "",
+    "date": "2027-03-06"
+  },
+  {
+    "word": "PIANO",
+    "sentence": "",
+    "date": "2027-03-07"
+  },
+  {
+    "word": "MISTO",
+    "sentence": "",
+    "date": "2027-03-08"
+  },
+  {
+    "word": "BOBÃO",
+    "sentence": "",
+    "date": "2027-03-09"
+  },
+  {
+    "word": "DOCES",
+    "sentence": "",
+    "date": "2027-03-10"
+  },
+  {
+    "word": "MATOS",
+    "sentence": "",
+    "date": "2027-03-11"
+  },
+  {
+    "word": "TÉDIO",
+    "sentence": "",
+    "date": "2027-03-12"
+  },
+  {
+    "word": "MAPAS",
+    "sentence": "",
+    "date": "2027-03-13"
+  },
+  {
+    "word": "LOCAR",
+    "sentence": "",
+    "date": "2027-03-14"
+  },
+  {
+    "word": "VOLTA",
+    "sentence": "",
+    "date": "2027-03-15"
+  },
+  {
+    "word": "OLIVA",
+    "sentence": "",
+    "date": "2027-03-16"
+  },
+  {
+    "word": "ADEUS",
+    "sentence": "",
+    "date": "2027-03-17"
+  },
+  {
+    "word": "BREVE",
+    "sentence": "",
+    "date": "2027-03-18"
+  },
+  {
+    "word": "VÔLEI",
+    "sentence": "",
+    "date": "2027-03-19"
+  },
+  {
+    "word": "PIZZA",
+    "sentence": "",
+    "date": "2027-03-20"
+  },
+  {
+    "word": "ROLÊS",
+    "sentence": "",
+    "date": "2027-03-21"
+  },
+  {
+    "word": "OCUPA",
+    "sentence": "",
+    "date": "2027-03-22"
+  },
+  {
+    "word": "TAÇAS",
+    "sentence": "",
+    "date": "2027-03-23"
+  },
+  {
+    "word": "MANIA",
+    "sentence": "",
+    "date": "2027-03-24"
+  },
+  {
+    "word": "PASMO",
+    "sentence": "",
+    "date": "2027-03-25"
+  },
+  {
+    "word": "VIGOR",
+    "sentence": "",
+    "date": "2027-03-26"
+  },
+  {
+    "word": "FIXAR",
+    "sentence": "",
+    "date": "2027-03-27"
+  },
+  {
+    "word": "OPÇÃO",
+    "sentence": "",
+    "date": "2027-03-28"
+  },
+  {
+    "word": "TENTA",
+    "sentence": "",
+    "date": "2027-03-29"
+  },
+  {
+    "word": "TORNA",
+    "sentence": "",
+    "date": "2027-03-30"
+  },
+  {
+    "word": "VIVER",
+    "sentence": "",
+    "date": "2027-03-31"
+  },
+  {
+    "word": "ÓTIMO",
+    "sentence": "",
+    "date": "2027-04-01"
+  },
+  {
+    "word": "LINHA",
+    "sentence": "",
+    "date": "2027-04-02"
+  },
+  {
+    "word": "BAZAR",
+    "sentence": "",
+    "date": "2027-04-03"
+  },
+  {
+    "word": "NUNCA",
+    "sentence": "",
+    "date": "2027-04-04"
+  },
+  {
+    "word": "PARAR",
+    "sentence": "",
+    "date": "2027-04-05"
+  },
+  {
+    "word": "PRAÇA",
+    "sentence": "",
+    "date": "2027-04-06"
+  },
+  {
+    "word": "JULHO",
+    "sentence": "",
+    "date": "2027-04-07"
+  },
+  {
+    "word": "BICHO",
+    "sentence": "",
+    "date": "2027-04-08"
+  },
+  {
+    "word": "LINKS",
+    "sentence": "",
+    "date": "2027-04-09"
+  },
+  {
+    "word": "MUDOU",
+    "sentence": "",
+    "date": "2027-04-10"
+  },
+  {
+    "word": "IDOSO",
+    "sentence": "",
+    "date": "2027-04-11"
+  },
+  {
+    "word": "IMUNE",
+    "sentence": "",
+    "date": "2027-04-12"
+  },
+  {
+    "word": "ARTES",
+    "sentence": "",
+    "date": "2027-04-13"
+  },
+  {
+    "word": "GATOS",
+    "sentence": "",
+    "date": "2027-04-14"
+  },
+  {
+    "word": "POBRE",
+    "sentence": "",
+    "date": "2027-04-15"
+  },
+  {
+    "word": "CORES",
+    "sentence": "",
+    "date": "2027-04-16"
+  },
+  {
+    "word": "MORSE",
+    "sentence": "",
+    "date": "2027-04-17"
+  },
+  {
+    "word": "VOARÁ",
+    "sentence": "",
+    "date": "2027-04-18"
+  },
+  {
+    "word": "FAVOR",
+    "sentence": "",
+    "date": "2027-04-19"
+  },
+  {
+    "word": "PENSA",
+    "sentence": "",
+    "date": "2027-04-20"
+  },
+  {
+    "word": "PAGÃO",
+    "sentence": "",
+    "date": "2027-04-21"
+  },
+  {
+    "word": "BELOS",
+    "sentence": "",
+    "date": "2027-04-22"
+  },
+  {
+    "word": "GRUTA",
+    "sentence": "",
+    "date": "2027-04-23"
+  },
+  {
+    "word": "AVIÃO",
+    "sentence": "",
+    "date": "2027-04-24"
+  },
+  {
+    "word": "RUÍDO",
+    "sentence": "",
+    "date": "2027-04-25"
+  },
+  {
+    "word": "ZOMBA",
+    "sentence": "",
+    "date": "2027-04-26"
+  },
+  {
+    "word": "IBERÊ",
+    "sentence": "",
+    "date": "2027-04-27"
+  },
+  {
+    "word": "HASHI",
+    "sentence": "",
+    "date": "2027-04-28"
+  },
+  {
+    "word": "HORAS",
+    "sentence": "",
+    "date": "2027-04-29"
+  },
+  {
+    "word": "FEDOR",
+    "sentence": "",
+    "date": "2027-04-30"
+  },
+  {
+    "word": "JOVEM",
+    "sentence": "",
+    "date": "2027-05-01"
+  },
+  {
+    "word": "DEPRÊ",
+    "sentence": "",
+    "date": "2027-05-02"
+  },
+  {
+    "word": "GREGO",
+    "sentence": "",
+    "date": "2027-05-03"
+  },
+  {
+    "word": "VESTE",
+    "sentence": "",
+    "date": "2027-05-04"
+  },
+  {
+    "word": "AMADO",
+    "sentence": "",
+    "date": "2027-05-05"
+  },
+  {
+    "word": "LUCRA",
+    "sentence": "",
+    "date": "2027-05-06"
+  },
+  {
+    "word": "BUSCA",
+    "sentence": "",
+    "date": "2027-05-07"
+  },
+  {
+    "word": "FATIA",
+    "sentence": "",
+    "date": "2027-05-08"
+  },
+  {
+    "word": "BANHO",
+    "sentence": "",
+    "date": "2027-05-09"
+  },
+  {
+    "word": "BABÃO",
+    "sentence": "",
+    "date": "2027-05-10"
+  },
+  {
+    "word": "REFÉM",
+    "sentence": "",
+    "date": "2027-05-11"
+  },
+  {
+    "word": "AFAGO",
+    "sentence": "",
+    "date": "2027-05-12"
+  },
+  {
+    "word": "EXATO",
+    "sentence": "",
+    "date": "2027-05-13"
+  },
+  {
+    "word": "LENTE",
+    "sentence": "",
+    "date": "2027-05-14"
+  },
+  {
+    "word": "PROVA",
+    "sentence": "",
+    "date": "2027-05-15"
+  },
+  {
+    "word": "NADAR",
+    "sentence": "",
+    "date": "2027-05-16"
+  },
+  {
+    "word": "POSES",
+    "sentence": "",
+    "date": "2027-05-17"
+  },
+  {
+    "word": "PLACA",
+    "sentence": "",
+    "date": "2027-05-18"
+  },
+  {
+    "word": "LIMBO",
+    "sentence": "",
+    "date": "2027-05-19"
+  },
+  {
+    "word": "PAGAR",
+    "sentence": "",
+    "date": "2027-05-20"
+  },
+  {
+    "word": "REPOR",
+    "sentence": "",
+    "date": "2027-05-21"
+  },
+  {
+    "word": "RAROS",
+    "sentence": "",
+    "date": "2027-05-22"
+  },
+  {
+    "word": "DETÉM",
+    "sentence": "",
+    "date": "2027-05-23"
+  },
+  {
+    "word": "BACON",
+    "sentence": "",
+    "date": "2027-05-24"
+  },
+  {
+    "word": "SÓCIO",
+    "sentence": "",
+    "date": "2027-05-25"
+  },
+  {
+    "word": "ONDAS",
+    "sentence": "",
+    "date": "2027-05-26"
+  },
+  {
+    "word": "OLHAR",
+    "sentence": "",
+    "date": "2027-05-27"
+  },
+  {
+    "word": "GALHO",
+    "sentence": "",
+    "date": "2027-05-28"
+  },
+  {
+    "word": "BERGA",
+    "sentence": "",
+    "date": "2027-05-29"
+  }
 ]
