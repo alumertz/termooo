@@ -45,11 +45,35 @@
 
   <div id="overlay" class="hidden">
     <div class="modal">
-      <div id="modal-icon"></div>
-      <div id="modal-label"></div>
       <div id="modal-word"></div>
       <div id="modal-sentence"></div>
-      <button id="modal-close">Fechar</button>
+
+      <div class="stats-section">
+        <h2 class="stats-title">progresso</h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-num" id="stat-games">0</span>
+            <span class="stat-label">jogos</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" id="stat-pct">0%</span>
+            <span class="stat-label">de vitórias</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" id="stat-streak">0</span>
+            <span class="stat-label">sequência<br>de vitórias</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" id="stat-best">0</span>
+            <span class="stat-label">melhor<br>sequência</span>
+          </div>
+        </div>
+
+        <div class="dist-header">
+          <h2 class="stats-title">distribuição de tentativas</h2>
+        </div>
+        <div id="dist-chart"></div>
+      </div>
     </div>
   </div>
 

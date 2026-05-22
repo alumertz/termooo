@@ -54,6 +54,81 @@ function getAllGuesses() {
   return guesses;
 }
 
+function computeStats() {
+  const history = loadHistory();
+  const entries = Object.entries(history).sort(([a], [b]) => a < b ? -1 : 1);
+  const total = entries.length;
+  const wins  = entries.filter(([, e]) => e.tries !== -1).length;
+  const winPct = total === 0 ? 0 : Math.round(wins / total * 100);
+
+  const dist = { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '-1': 0 };
+  for (const [, e] of entries) {
+    const k = String(e.tries);
+    if (k in dist) dist[k]++;
+  }
+
+  let current = 0, best = 0, temp = 0;
+  for (const [, e] of entries) {
+    if (e.tries !== -1) { temp++; if (temp > best) best = temp; }
+    else temp = 0;
+  }
+  current = temp;
+
+  return { total, winPct, current, best, dist };
+}
+
+function renderStats(stats, currentTries) {
+  document.getElementById('stat-games').textContent  = stats.total;
+  document.getElementById('stat-pct').textContent    = stats.winPct + '%';
+  document.getElementById('stat-streak').textContent = stats.current;
+  document.getElementById('stat-best').textContent   = stats.best;
+
+  const chart = document.getElementById('dist-chart');
+  chart.innerHTML = '';
+
+  const rows = [
+    { key: '1',  label: '1' },
+    { key: '2',  label: '2' },
+    { key: '3',  label: '3' },
+    { key: '4',  label: '4' },
+    { key: '5',  label: '5' },
+    { key: '6',  label: '6' },
+    { key: '-1', label: '💀' },
+  ];
+
+  const maxCount = Math.max(...Object.values(stats.dist), 1);
+
+  for (const { key, label } of rows) {
+    const count    = stats.dist[key] ?? 0;
+    const isActive = currentTries !== null && String(currentTries) === key;
+
+    const rowEl = document.createElement('div');
+    rowEl.className = 'dist-row';
+
+    const labelEl = document.createElement('span');
+    labelEl.className = 'dist-row-label';
+    labelEl.textContent = label;
+
+    const trackEl = document.createElement('div');
+    trackEl.className = 'dist-track';
+
+    const barEl = document.createElement('div');
+    if (count === 0) {
+      barEl.className = 'dist-bar dist-bar--zero';
+      barEl.textContent = '∅';
+    } else {
+      barEl.className = 'dist-bar' + (isActive ? ' dist-bar--active' : '');
+      barEl.style.width = (count / maxCount * 100) + '%';
+      barEl.textContent = count;
+    }
+
+    trackEl.appendChild(barEl);
+    rowEl.appendChild(labelEl);
+    rowEl.appendChild(trackEl);
+    chart.appendChild(rowEl);
+  }
+}
+
 function revealInstant(r, guess, result) {
   for (let c = 0; c < WORD_LEN; c++) {
     tiles[r][c].dataset.state = result[c];
@@ -121,12 +196,15 @@ async function init() {
   buildBoard();
   buildKeyboard();
   document.addEventListener('keydown', onKey);
-  document.getElementById('modal-close').addEventListener('click', closeModal);
+  document.getElementById('overlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeModal();
+  });
+  document.getElementById('btn-stats').addEventListener('click', openStatsModal);
 
   const saved = getTodayResult(todayStr);
   if (saved) {
     restoreGame(saved.guesses, saved.tries);
-    setTimeout(() => openModal(saved.tries !== -1), 600);
+    setTimeout(() => openModal(saved.tries), 600);
   }
 }
 
@@ -242,12 +320,12 @@ function submit() {
     setTimeout(() => {
       showToast(WIN_MSGS[r] ?? 'Correto!', 1800);
       bounceRow(r);
-      setTimeout(() => openModal(true), 1800);
+      setTimeout(() => openModal(r + 1), 1800);
     }, delay);
   } else if (lost) {
     over = true;
     saveResult(todayStr, -1, getAllGuesses());
-    setTimeout(() => openModal(false), delay);
+    setTimeout(() => openModal(-1), delay);
   }
 }
 
@@ -334,11 +412,18 @@ function showToast(msg, dur = 1800, type = '') {
 
 // ── Modal ─────────────────────────────────────────────────────────────────────
 
-function openModal(won) {
-  document.getElementById('modal-icon').textContent     = won ? '🎉' : '😔';
-  document.getElementById('modal-label').textContent    = won ? 'Você acertou!' : 'A palavra era';
+function openModal(currentTries = null) {
+  document.querySelector('.modal').classList.remove('modal--stats-only');
   document.getElementById('modal-word').textContent     = target;
   document.getElementById('modal-sentence').textContent = sentence;
+  renderStats(computeStats(), currentTries);
+  document.getElementById('overlay').classList.remove('hidden');
+}
+
+function openStatsModal() {
+  document.querySelector('.modal').classList.add('modal--stats-only');
+  const saved = getTodayResult(todayStr);
+  renderStats(computeStats(), saved ? saved.tries : null);
   document.getElementById('overlay').classList.remove('hidden');
 }
 
