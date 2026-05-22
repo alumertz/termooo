@@ -355,8 +355,10 @@ main {
   border-radius: 50%;
 }
 
-.cal-day--won  { background-color: var(--colorRight); color: #fff; }
-.cal-day--lost { background-color: #c0392b; color: #fff; }
+.cal-day--won       { background-color: var(--colorRight); color: #fff; }
+.cal-day--lost      { background-color: #c0392b; color: #fff; }
+.cal-day--late-won  { background-color: var(--colorPlace); color: #fff; }
+.cal-day--late-lost { background-color: #7c3aed; color: #fff; }
 
 .cal-day--today {
   outline: 2px solid var(--text);
@@ -417,7 +419,7 @@ main {
   font-size: 3.5em;
   font-weight: 700;
   letter-spacing: .14em;
-  color: var(--colorRight);
+  color: var(--text);
   margin-bottom: 1.5em;
   text-transform: uppercase;
 }

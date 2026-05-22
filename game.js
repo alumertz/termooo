@@ -40,9 +40,9 @@ function loadHistory() {
   catch { return {}; }
 }
 
-function saveResult(date, tries, guesses) {
+function saveResult(date, tries, guesses, late = false) {
   const history = loadHistory();
-  history[date] = { tries, guesses };
+  history[date] = { tries, guesses, ...(late ? { late: true } : {}) };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
 }
 
@@ -60,7 +60,9 @@ function getAllGuesses() {
 
 function computeStats() {
   const history = loadHistory();
-  const entries = Object.entries(history).sort(([a], [b]) => a < b ? -1 : 1);
+  const entries = Object.entries(history)
+    .sort(([a], [b]) => a < b ? -1 : 1)
+    .filter(([, e]) => !e.late);
   const total = entries.length;
   const wins  = entries.filter(([, e]) => e.tries !== -1).length;
   const winPct = total === 0 ? 0 : Math.round(wins / total * 100);
@@ -218,7 +220,11 @@ function renderCalendar() {
     cell.textContent = d;
 
     if (result) {
-      cell.classList.add(result.tries !== -1 ? 'cal-day--won' : 'cal-day--lost');
+      if (result.late) {
+        cell.classList.add(result.tries !== -1 ? 'cal-day--late-won' : 'cal-day--late-lost');
+      } else {
+        cell.classList.add(result.tries !== -1 ? 'cal-day--won' : 'cal-day--lost');
+      }
     } else if (isFuture || !hasWord) {
       cell.classList.add('cal-day--future');
     } else {
@@ -432,11 +438,12 @@ function submit() {
   const delay = (WORD_LEN - 1) * FLIP_STEP + FLIP_DUR + 80;
   const won   = result.every(s => s === 'correct');
   const lost  = !won && row === MAX_ROWS;
+  const isLate = todayStr !== realTodayStr;
 
   if (won) {
     over = true;
     const guesses = getAllGuesses();
-    saveResult(todayStr, r + 1, guesses);
+    saveResult(todayStr, r + 1, guesses, isLate);
     setTimeout(() => {
       showToast(WIN_MSGS[r] ?? 'Correto!', 1800, 'invalid');
       bounceRow(r);
@@ -444,8 +451,11 @@ function submit() {
     }, delay);
   } else if (lost) {
     over = true;
-    saveResult(todayStr, -1, getAllGuesses());
-    setTimeout(() => openModal(-1), delay);
+    saveResult(todayStr, -1, getAllGuesses(), isLate);
+    setTimeout(() => {
+      showToast(`palavra certa: ${target.toLowerCase()}`, 2000, 'invalid');
+      setTimeout(() => openModal(-1), 2000);
+    }, delay);
   }
 }
 
@@ -533,7 +543,8 @@ function showToast(msg, dur = 1800, type = '') {
 // ── Modal ─────────────────────────────────────────────────────────────────────
 
 function openModal(currentTries = null) {
-  document.querySelector('.modal').classList.remove('modal--stats-only');
+  const modal = document.querySelector('.modal');
+  modal.classList.remove('modal--stats-only', 'modal--lost');
   document.getElementById('modal-word').textContent     = target;
   document.getElementById('modal-sentence').textContent = sentence;
   renderStats(computeStats(), currentTries);
