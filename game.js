@@ -44,7 +44,7 @@ async function init() {
     if (res.ok) {
       const text = await res.text();
       validWords = new Set(
-        text.split('\n').map(normalize).filter(w => w.length === 5)
+        text.split('\n').map(normalize).filter(w => w.length === 4 || w.length === 5)
       );
     }
   } catch {
@@ -56,8 +56,9 @@ async function init() {
     return;
   }
 
-  const todayStr = new Date().toISOString().slice(0, 10);
-  const entry = words.find(w => w.date === todayStr) ?? words[dayIndex() % words.length];
+  const now = new Date();
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const entry = words.find(w => w.date === todayStr) ?? { word: 'TESTE', sentence: '' };
   target   = String(entry.word     ?? '').toUpperCase().trim();
   sentence = String(entry.sentence ?? '');
 
@@ -70,13 +71,6 @@ async function init() {
   buildKeyboard();
   document.addEventListener('keydown', onKey);
   document.getElementById('modal-close').addEventListener('click', closeModal);
-}
-
-function dayIndex() {
-  const origin = new Date(2024, 0, 1);
-  const today  = new Date();
-  today.setHours(0, 0, 0, 0);
-  return Math.max(0, Math.floor((today - origin) / 86_400_000));
 }
 
 // ── DOM builders ─────────────────────────────────────────────────────────────
@@ -163,7 +157,9 @@ function submit() {
 
   const guess = tiles[row].map(t => t.textContent).join('');
 
-  if (validWords && !validWords.has(guess)) {
+  const normalizedGuess = normalize(guess);
+  const singular = normalizedGuess.endsWith('S') ? normalizedGuess.slice(0, -1) : null;
+  if (validWords && !validWords.has(normalizedGuess) && (!singular || !validWords.has(singular))) {
     showToast('essa palavra não é aceita', 1800, 'invalid');
     shakeRow(row);
     return;
