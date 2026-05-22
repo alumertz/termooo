@@ -14,6 +14,7 @@ const STATE_RANK = { correct: 3, present: 2, absent: 1 };
 
 let target    = '';
 let sentence  = '';
+let todayStr  = '';
 let row       = 0;
 let col       = 0;
 let over      = false;
@@ -22,8 +23,58 @@ let keyBtns   = {};
 let toastTmr  = null;
 let validWords = null;
 
+const STORAGE_KEY = 'termooo_history';
+
 function normalize(w) {
   return w.normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().trim();
+}
+
+// ── Persistence ───────────────────────────────────────────────────────────────
+
+function loadHistory() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? {}; }
+  catch { return {}; }
+}
+
+function saveResult(date, tries, guesses) {
+  const history = loadHistory();
+  history[date] = { tries, guesses };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+}
+
+function getTodayResult(date) {
+  return loadHistory()[date] ?? null;
+}
+
+function getAllGuesses() {
+  const guesses = [];
+  for (let i = 0; i < row; i++) {
+    guesses.push(tiles[i].map(t => t.textContent).join(''));
+  }
+  return guesses;
+}
+
+function revealInstant(r, guess, result) {
+  for (let c = 0; c < WORD_LEN; c++) {
+    tiles[r][c].dataset.state = result[c];
+    promoteKey(guess[c], result[c]);
+  }
+}
+
+function restoreGame(guesses, tries) {
+  for (const guess of guesses) {
+    const result = evaluate(guess);
+    for (let c = 0; c < WORD_LEN; c++) {
+      tiles[row][c].textContent = guess[c];
+    }
+    revealInstant(row, guess, result);
+    tiles[row][0].parentElement.classList.remove('current');
+    row++;
+    col = 0;
+    if (row < MAX_ROWS) tiles[row][0].parentElement.classList.add('current');
+  }
+  over = true;
+  if (row < MAX_ROWS) tiles[row][0].parentElement.classList.remove('current');
 }
 
 // ── Bootstrap ────────────────────────────────────────────────────────────────
@@ -57,7 +108,7 @@ async function init() {
   }
 
   const now = new Date();
-  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
   const entry = words.find(w => w.date === todayStr) ?? { word: 'TESTE', sentence: '' };
   target   = String(entry.word     ?? '').toUpperCase().trim();
   sentence = String(entry.sentence ?? '');
@@ -71,6 +122,12 @@ async function init() {
   buildKeyboard();
   document.addEventListener('keydown', onKey);
   document.getElementById('modal-close').addEventListener('click', closeModal);
+
+  const saved = getTodayResult(todayStr);
+  if (saved) {
+    restoreGame(saved.guesses, saved.tries);
+    setTimeout(() => openModal(saved.tries !== -1), 600);
+  }
 }
 
 // ── DOM builders ─────────────────────────────────────────────────────────────
@@ -180,6 +237,8 @@ function submit() {
 
   if (won) {
     over = true;
+    const guesses = getAllGuesses();
+    saveResult(todayStr, r + 1, guesses);
     setTimeout(() => {
       showToast(WIN_MSGS[r] ?? 'Correto!', 1800);
       bounceRow(r);
@@ -187,6 +246,7 @@ function submit() {
     }, delay);
   } else if (lost) {
     over = true;
+    saveResult(todayStr, -1, getAllGuesses());
     setTimeout(() => openModal(false), delay);
   }
 }
