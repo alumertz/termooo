@@ -33,6 +33,25 @@
     </div>
   </header>
 
+  <div id="calendar-panel" class="hidden">
+    <div class="calendar">
+      <div class="calendar-nav">
+        <button class="icon-btn" id="cal-prev" aria-label="Mês anterior">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <span id="cal-month-label"></span>
+        <button class="icon-btn" id="cal-next" aria-label="Próximo mês">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <div class="calendar-weekdays">
+        <span>dom</span><span>seg</span><span>ter</span><span>qua</span>
+        <span>qui</span><span>sex</span><span>sáb</span>
+      </div>
+      <div id="cal-grid"></div>
+    </div>
+  </div>
+
   <div id="toast-wrap">
     <div id="toast"></div>
   </div>

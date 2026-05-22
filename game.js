@@ -22,6 +22,10 @@ let tiles     = [];
 let keyBtns   = {};
 let toastTmr  = null;
 let validWords = null;
+let words      = [];
+let calYear    = 0;
+let calMonth   = 0;
+let realTodayStr = '';
 
 const STORAGE_KEY = 'termooo_history';
 
@@ -152,10 +156,114 @@ function restoreGame(guesses, tries) {
   if (row < MAX_ROWS) tiles[row][0].parentElement.classList.remove('current');
 }
 
+// ── Calendar ──────────────────────────────────────────────────────────────────
+
+const MONTHS_PT = ['janeiro','fevereiro','março','abril','maio','junho',
+                   'julho','agosto','setembro','outubro','novembro','dezembro'];
+
+function toggleCalendar() {
+  const panel = document.getElementById('calendar-panel');
+  const isHidden = panel.classList.toggle('hidden');
+  if (!isHidden) renderCalendar();
+}
+
+function renderCalendar() {
+  const history = loadHistory();
+
+  const firstDate = words.length ? words[0].date : realTodayStr;
+  const [firstY, firstM] = firstDate.split('-').map(Number);
+  const [realY, realM]   = realTodayStr.split('-').map(Number);
+
+  document.getElementById('cal-month-label').textContent =
+    `${MONTHS_PT[calMonth]} ${calYear}`;
+
+  const prevBtn = document.getElementById('cal-prev');
+  const nextBtn = document.getElementById('cal-next');
+
+  prevBtn.disabled = calYear < firstY || (calYear === firstY && calMonth <= firstM - 1);
+  nextBtn.disabled = calYear > realY  || (calYear === realY  && calMonth >= realM - 1);
+
+  prevBtn.onclick = () => {
+    if (calMonth === 0) { calYear--; calMonth = 11; }
+    else calMonth--;
+    renderCalendar();
+  };
+  nextBtn.onclick = () => {
+    if (calMonth === 11) { calYear++; calMonth = 0; }
+    else calMonth++;
+    renderCalendar();
+  };
+
+  const grid = document.getElementById('cal-grid');
+  grid.innerHTML = '';
+
+  const firstDay = new Date(calYear, calMonth, 1).getDay();
+  const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+
+  for (let i = 0; i < firstDay; i++) {
+    const empty = document.createElement('div');
+    empty.className = 'cal-day cal-day--empty';
+    grid.appendChild(empty);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dateStr = `${calYear}-${String(calMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+    const isFuture = dateStr > realTodayStr;
+    const isToday  = dateStr === realTodayStr;
+    const result   = history[dateStr] ?? null;
+    const hasWord  = words.some(w => w.date === dateStr);
+
+    const cell = document.createElement('div');
+    cell.className = 'cal-day';
+    cell.textContent = d;
+
+    if (result) {
+      cell.classList.add(result.tries !== -1 ? 'cal-day--won' : 'cal-day--lost');
+    } else if (isFuture || !hasWord) {
+      cell.classList.add('cal-day--future');
+    } else {
+      cell.classList.add('cal-day--playable');
+      cell.addEventListener('click', () => {
+        const [y, m, d] = dateStr.split('-');
+        loadDate(dateStr);
+        showToast(`${d}/${m}/${y}`, 2000, 'invalid');
+      });
+    }
+
+    if (isToday) cell.classList.add('cal-day--today');
+
+    grid.appendChild(cell);
+  }
+}
+
+function loadDate(dateStr) {
+  const entry = words.find(w => w.date === dateStr);
+  if (!entry) return;
+
+  todayStr = dateStr;
+  target   = normalize(entry.word);
+  sentence = String(entry.sentence ?? '');
+
+  row = 0; col = 0; over = false;
+
+  tiles.forEach((rowTiles, r) => {
+    rowTiles.forEach(t => {
+      t.textContent = '';
+      t.className = 'tile';
+      delete t.dataset.state;
+    });
+    const rowEl = rowTiles[0].parentElement;
+    rowEl.className = 'row' + (r === 0 ? ' current' : '');
+  });
+
+  Object.values(keyBtns).forEach(btn => delete btn.dataset.state);
+
+  document.getElementById('calendar-panel').classList.add('hidden');
+}
+
 // ── Bootstrap ────────────────────────────────────────────────────────────────
 
 async function init() {
-  let words;
   try {
     const res = await fetch('words.json');
     if (!res.ok) throw new Error(res.status);
@@ -184,6 +292,9 @@ async function init() {
 
   const now = new Date();
   todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  realTodayStr = todayStr;
+  calYear  = now.getFullYear();
+  calMonth = now.getMonth();
   const entry = words.find(w => w.date === todayStr) ?? { word: 'TESTE', sentence: '' };
   target   = String(entry.word     ?? '').toUpperCase().trim();
   sentence = String(entry.sentence ?? '');
@@ -198,6 +309,15 @@ async function init() {
   document.addEventListener('keydown', onKey);
   document.getElementById('overlay').addEventListener('click', e => {
     if (e.target === e.currentTarget) closeModal();
+  });
+  document.getElementById('btn-archive').addEventListener('click', toggleCalendar);
+  document.addEventListener('click', e => {
+    const panel = document.getElementById('calendar-panel');
+    if (!panel.classList.contains('hidden') &&
+        !panel.contains(e.target) &&
+        e.target !== document.getElementById('btn-archive')) {
+      panel.classList.add('hidden');
+    }
   });
   document.getElementById('btn-stats').addEventListener('click', openStatsModal);
 
