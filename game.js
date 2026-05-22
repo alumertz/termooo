@@ -321,7 +321,7 @@ async function init() {
     const panel = document.getElementById('calendar-panel');
     if (!panel.classList.contains('hidden') &&
         !panel.contains(e.target) &&
-        e.target !== document.getElementById('btn-archive')) {
+        !document.getElementById('btn-archive').contains(e.target)) {
       panel.classList.add('hidden');
     }
   });
