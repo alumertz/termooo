@@ -60,21 +60,21 @@ function getAllGuesses() {
 
 function computeStats() {
   const history = loadHistory();
-  const entries = Object.entries(history)
-    .sort(([a], [b]) => a < b ? -1 : 1)
-    .filter(([, e]) => !e.late);
-  const total = entries.length;
-  const wins  = entries.filter(([, e]) => e.tries !== -1).length;
+  const allEntries = Object.entries(history).sort(([a], [b]) => a < b ? -1 : 1);
+  const streakEntries = allEntries.filter(([, e]) => !e.late);
+
+  const total  = allEntries.length;
+  const wins   = allEntries.filter(([, e]) => e.tries !== -1).length;
   const winPct = total === 0 ? 0 : Math.round(wins / total * 100);
 
   const dist = { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '-1': 0 };
-  for (const [, e] of entries) {
+  for (const [, e] of allEntries) {
     const k = String(e.tries);
     if (k in dist) dist[k]++;
   }
 
   let current = 0, best = 0, temp = 0;
-  for (const [, e] of entries) {
+  for (const [, e] of streakEntries) {
     if (e.tries !== -1) { temp++; if (temp > best) best = temp; }
     else temp = 0;
   }
