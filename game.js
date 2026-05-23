@@ -166,7 +166,12 @@ const MONTHS_PT = ['janeiro','fevereiro','março','abril','maio','junho',
 function toggleCalendar() {
   const panel = document.getElementById('calendar-panel');
   const isHidden = panel.classList.toggle('hidden');
-  if (!isHidden) renderCalendar();
+  if (!isHidden) {
+    const [y, m] = realTodayStr.split('-').map(Number);
+    calYear  = y;
+    calMonth = m - 1;
+    renderCalendar();
+  }
 }
 
 function renderCalendar() {
@@ -225,6 +230,15 @@ function renderCalendar() {
       } else {
         cell.classList.add(result.tries !== -1 ? 'cal-day--won' : 'cal-day--lost');
       }
+      cell.classList.add('cal-day--played');
+      cell.addEventListener('click', () => {
+        loadDate(dateStr);
+        const saved = loadHistory()[dateStr];
+        if (saved && saved.guesses) {
+          restoreGame(saved.guesses, saved.tries);
+          setTimeout(() => openModal(saved.tries), 600);
+        }
+      });
     } else if (isFuture || !hasWord) {
       cell.classList.add('cal-day--future');
     } else {
