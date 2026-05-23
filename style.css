@@ -263,6 +263,13 @@ main {
   padding: 1vh 1em 1vh;
 }
 
+@media (max-width: 600px) {
+  #keyboard {
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+}
+
 .key-row {
   display: grid;
   gap: 1rem;
