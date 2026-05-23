@@ -326,6 +326,12 @@ async function init() {
     }
   });
   document.getElementById('btn-stats').addEventListener('click', openStatsModal);
+  document.getElementById('btn-settings').addEventListener('click', () => {
+    document.getElementById('about-overlay').classList.remove('hidden');
+  });
+  document.getElementById('about-overlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget) document.getElementById('about-overlay').classList.add('hidden');
+  });
 
   const saved = getTodayResult(todayStr);
   if (saved) {
