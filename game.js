@@ -326,6 +326,12 @@ async function init() {
     }
   });
   document.getElementById('btn-stats').addEventListener('click', openStatsModal);
+  document.getElementById('btn-help').addEventListener('click', () => {
+    document.getElementById('help-overlay').classList.remove('hidden');
+  });
+  document.getElementById('help-overlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget) document.getElementById('help-overlay').classList.add('hidden');
+  });
   document.getElementById('btn-settings').addEventListener('click', () => {
     document.getElementById('about-overlay').classList.remove('hidden');
   });

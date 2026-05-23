@@ -15,7 +15,7 @@
     <div class="header-inner">
       <div class="header-side">
         <button class="icon-btn" id="btn-archive" aria-label="Arquivo">
-          <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </button>
         <button class="icon-btn" id="btn-help" aria-label="Ajuda">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="currentColor" stroke="none"/></svg>
@@ -61,6 +61,53 @@
   </main>
 
   <div id="keyboard"></div>
+
+  <div id="help-overlay" class="hidden">
+    <div class="modal modal--help">
+      <div class="help-content">
+        <h2 class="help-title">sobre este termo</h2>
+        <p class="help-intro">A Ana quis presentear o Camilo pelos seus 25 anos com uma nova versão do Termo pensada especialmente pra ele. Mas então o que oferecemos?</p>
+        <ul class="help-list">
+          <li> nenhuma palavra repetidaaaaa!!!! São 365 garantidos de palavras únicas e escolhidas a clique para você se divertir!</li>
+          <li> toda palavra é acompanhada de uma frase representativa da vida do Milo — foi feito um grande esforço para que sejam divertidas :))))</li>
+          <li> o novo Termo possui um calendário onde você pode ver todo o histórico de jogos e voltar para dias anteriores, ou seja, nunca mais perca um dai de termo!!! 
+            (mas sua sequência estára sendo quebrada mesmo assim, não adianta trapacear, tem que ter consistência...</li>
+        </ul>
+
+        <h3 class="help-subtitle">o calendário</h3>
+        <p class="help-text">Cada dia jogado fica marcado com uma cor:</p>
+
+        <div class="cal-legend">
+          <div class="cal-legend-item">
+            <span class="cal-dot cal-dot--won"></span>
+            <span>acertou no dia</span>
+          </div>
+          <div class="cal-legend-item">
+            <span class="cal-dot cal-dot--late-won"></span>
+            <span>acertou em atraso</span>
+          </div>
+          <div class="cal-legend-item">
+            <span class="cal-dot cal-dot--lost"></span>
+            <span>não acertou no dia</span>
+          </div>
+          <div class="cal-legend-item">
+            <span class="cal-dot cal-dot--late-lost"></span>
+            <span>não acertou em atraso</span>
+          </div>
+        </div>
+
+        <div class="cal-illustration">
+          <div class="cal-ill-day cal-ill-day--won">12</div>
+          <div class="cal-ill-day cal-ill-day--won">13</div>
+          <div class="cal-ill-day cal-ill-day--lost">14</div>
+          <div class="cal-ill-day cal-ill-day--late-won">15</div>
+          <div class="cal-ill-day cal-ill-day--won">16</div>
+          <div class="cal-ill-day cal-ill-day--late-lost">17</div>
+          <div class="cal-ill-day cal-ill-day--won">18</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="about-overlay" class="hidden">
     <div class="modal modal--about">
