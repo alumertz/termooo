@@ -21,7 +21,8 @@ let over      = false;
 let tiles     = [];
 let keyBtns   = {};
 let toastTmr  = null;
-let validWords = null;
+let validWords   = null;
+let accentedWords = {}; // normalized → accented form
 let words      = [];
 let calYear    = 0;
 let calMonth   = 0;
@@ -261,7 +262,7 @@ function loadDate(dateStr) {
   if (!entry) return;
 
   todayStr = dateStr;
-  target   = normalize(entry.word);
+  target   = String(entry.word ?? '').toUpperCase().trim();
   sentence = String(entry.sentence ?? '');
 
   row = 0; col = 0; over = false;
@@ -297,9 +298,15 @@ async function init() {
     const res = await fetch('palavras.txt');
     if (res.ok) {
       const text = await res.text();
-      validWords = new Set(
-        text.split('\n').map(normalize).filter(w => w.length === 4 || w.length === 5)
-      );
+      const rawWords = text.split('\n').map(w => w.trim()).filter(w => w.length >= 4 && w.length <= 6);
+      validWords = new Set();
+      for (const w of rawWords) {
+        const norm = normalize(w);
+        if (norm.length === 4 || norm.length === 5) {
+          validWords.add(norm);
+          if (!accentedWords[norm]) accentedWords[norm] = w.toUpperCase();
+        }
+      }
     }
   } catch {
     // validation unavailable — allow all guesses
@@ -455,7 +462,13 @@ function submit() {
   const result = evaluate(guess);
   const r      = row;
 
-  reveal(r, guess, result);
+  // Rewrite tiles with accented form from palavras.txt if available
+  const accentedGuess = accentedWords[normalizedGuess] || accentedWords[singular] || guess;
+  for (let c = 0; c < WORD_LEN; c++) {
+    tiles[r][c].textContent = accentedGuess[c] ?? guess[c];
+  }
+
+  reveal(r, accentedGuess, result);
   tiles[r][0].parentElement.classList.remove('current');
   row++;
   col = 0;
@@ -532,7 +545,7 @@ function reveal(r, guess, result) {
 }
 
 function promoteKey(letter, state) {
-  const btn = keyBtns[letter];
+  const btn = keyBtns[letter] ?? keyBtns[normalize(letter)];
   if (!btn) return;
   if (!btn.dataset.state || STATE_RANK[state] > STATE_RANK[btn.dataset.state]) {
     btn.dataset.state = state;
