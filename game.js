@@ -278,6 +278,7 @@ function loadDate(dateStr) {
   });
 
   Object.values(keyBtns).forEach(btn => delete btn.dataset.state);
+  updateCursor();
 
   document.getElementById('calendar-panel').classList.add('hidden');
 }
@@ -333,6 +334,7 @@ async function init() {
 
   buildBoard();
   buildKeyboard();
+  updateCursor();
   document.addEventListener('keydown', onKey);
   document.getElementById('overlay').addEventListener('click', e => {
     if (e.target === e.currentTarget) closeModal();
@@ -379,11 +381,28 @@ function buildBoard() {
     for (let c = 0; c < WORD_LEN; c++) {
       const t = document.createElement('div');
       t.className = 'tile';
+      const tileR = r, tileC = c;
+      t.addEventListener('click', () => clickTile(tileR, tileC));
       rowEl.appendChild(t);
       tiles[r][c] = t;
     }
     board.appendChild(rowEl);
   }
+}
+
+function clickTile(r, c) {
+  if (over) return;
+  if (r !== row) return;
+  col = c;
+  updateCursor();
+}
+
+function updateCursor() {
+  tiles.forEach((rowTiles, r) => {
+    rowTiles.forEach((t, c) => {
+      t.classList.toggle('cursor', r === row && c === col && !over);
+    });
+  });
 }
 
 function buildKeyboard() {
@@ -424,26 +443,35 @@ function handle(key) {
 
 function type(letter) {
   if (col >= WORD_LEN) return;
+  if (tiles[row][col].textContent) return;
   const t = tiles[row][col];
   t.textContent = letter;
   t.classList.remove('typed');
   void t.offsetWidth;
   t.classList.add('typed');
   col++;
+  updateCursor();
 }
 
 function erase() {
-  if (col <= 0) return;
-  col--;
-  const t = tiles[row][col];
-  t.textContent = '';
-  t.classList.remove('typed');
+  if (col < WORD_LEN && tiles[row][col].textContent) {
+    const t = tiles[row][col];
+    t.textContent = '';
+    t.classList.remove('typed');
+  } else if (col > 0) {
+    col--;
+    const t = tiles[row][col];
+    t.textContent = '';
+    t.classList.remove('typed');
+  }
+  updateCursor();
 }
 
 // ── Submission ───────────────────────────────────────────────────────────────
 
 function submit() {
-  if (col < WORD_LEN) {
+  const hasGap = tiles[row].some(t => !t.textContent);
+  if (hasGap) {
     showToast('Palavra incompleta');
     shakeRow(row);
     return;
@@ -473,6 +501,7 @@ function submit() {
   row++;
   col = 0;
   if (row < MAX_ROWS) tiles[row][0].parentElement.classList.add('current');
+  updateCursor();
 
   const delay = (WORD_LEN - 1) * FLIP_STEP + FLIP_DUR + 80;
   const won   = result.every(s => s === 'correct');

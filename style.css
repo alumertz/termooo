@@ -187,13 +187,13 @@ main {
 .tile {
   flex: 1;
   aspect-ratio: 1;
-  border: 0.125em solid transparent;
+  border: 6px solid transparent;
   border-radius: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Mitr', sans-serif;
-  font-size: 7em;
+  font-size: min(9vw, 64px);
   font-weight: 600;
   line-height: 1em;
   color: var(--text);
@@ -210,6 +210,11 @@ main {
 
 .row.current .tile {
   border-color: var(--border-typed);
+}
+
+.tile.cursor {
+  border-bottom-color: var(--text);
+  border-bottom-width: 9px;
 }
 
 .tile[data-state="correct"] {
